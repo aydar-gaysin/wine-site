@@ -12,10 +12,41 @@ env = Environment(
 template = env.get_template('template.html')
 
 years_running = int(datetime.datetime.now().year)-1920
+wine_bottles = [
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+    {
+        'title': 'Изабелла',
+        'price': '350 руб.',
+        'sort': 'Изабелла'
+    },
+]
 render_page = template.render(
-    years_running=years_running,
-    wine1_title='',
-    wine1_price='',
+
+    wine_bottles=wine_bottles,
 )
 
 with open('index.html', 'w', encoding='utf8') as file:
@@ -23,3 +54,4 @@ with open('index.html', 'w', encoding='utf8') as file:
 
 server = HTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler)
 server.serve_forever()
+
