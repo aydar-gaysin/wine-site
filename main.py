@@ -16,32 +16,33 @@ wine_bottles = [
     {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
-    },
-    {
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
+    },    {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
-    },
-    {
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
+    },    {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
-    },
-    {
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
+    },    {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
-    },
-    {
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
+    },    {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
-    },
-    {
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
+    },    {
         'title': 'Изабелла',
         'price': '350 руб.',
-        'sort': 'Изабелла'
+        'sort': 'Изабелла',
+        'image': 'images/izabella.png'
     },
 ]
 render_page = template.render(
