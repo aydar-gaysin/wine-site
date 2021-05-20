@@ -46,7 +46,7 @@ wine_bottles = [
     },
 ]
 render_page = template.render(
-
+    years_running=years_running,
     wine_bottles=wine_bottles,
 )
 
