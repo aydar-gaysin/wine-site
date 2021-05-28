@@ -119,25 +119,28 @@
           <div class="col-12 section-title text-center mb-5">
             <h2 class="d-block">{{ wine_sort }}</h2>
           </div>
-
-          {% for wine_bottle  in wine_bottles  %}
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/{{ wine_bottle['Картинка'] }}" alt="Image"
-                   class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{ wine_bottle
-                  ['Название'] }}</h3>
-                <p>
-                  {% if not wine_sort == 'Напитки' %}
-                  Сорт винограда - {{ wine_bottle['Сорт'] }}<br/>
-                  {% endif %}
-                  <span class="price">{{ wine_bottle["Цена"] }} руб.</span>
-                </p>
+            {% for wine_bottle  in wine_bottles  %}
+            <div class="col-lg-4 mb-5 col-md-6">
+              <div class="wine_v_1 text-center pb-4 pt-5">
+                <img src="images/{{ wine_bottle['Картинка'] }}" alt="Image"
+                     class="img-fluid">
+                {% if wine_bottle['Акция'] %}
+                <img src="assets/profitable.png" style="width:10rem;
+                height: 10rem;position:absolute;right: -20px;top: -20px;">
+                {% endif %}
+                <div>
+                  <h3 class="heading mt-3 mb-3 text-dark">{{ wine_bottle
+                    ['Название'] }}</h3>
+                  <p>
+                    {% if not wine_sort == 'Напитки' %}
+                    Сорт винограда - {{ wine_bottle['Сорт'] }}<br/>
+                    {% endif %}
+                    <span class="price">{{ wine_bottle['Цена'] }} руб.</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          {% endfor %}
+            {% endfor %}
           {% endfor %}
 
         </div>
