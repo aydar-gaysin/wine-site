@@ -16,7 +16,7 @@ template = env.get_template('template.html')
 
 years_running = int(datetime.datetime.now().year) - YEAR_STARTED
 
-excel_data = pandas.read_excel('wine3.xlsx', na_values=['Nan', 'nan'],
+excel_data = pandas.read_excel('products.xlsx', na_values=['Nan', 'nan'],
                                keep_default_na=False)
 
 sorted_wines = collections.defaultdict(list)
