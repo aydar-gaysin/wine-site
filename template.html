@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+python -m venv venv<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -115,9 +115,9 @@
         </div>
         <div class="row">
 
-          {% for wine_sort, wine_bottles in sorted_wines.items() %}
+          {% for product_category, wine_bottles in sorted_wines.items() %}
           <div class="col-12 section-title text-center mb-5">
-            <h2 class="d-block">{{ wine_sort }}</h2>
+            <h2 class="d-block">{{ product_category }}</h2>
           </div>
             {% for wine_bottle  in wine_bottles  %}
             <div class="col-lg-4 mb-5 col-md-6">
@@ -132,7 +132,7 @@
                   <h3 class="heading mt-3 mb-3 text-dark">{{ wine_bottle
                     ['Название'] }}</h3>
                   <p>
-                    {% if not wine_sort == 'Напитки' %}
+                    {% if not product_category == 'Напитки' %}
                     Сорт винограда - {{ wine_bottle['Сорт'] }}<br/>
                     {% endif %}
                     <span class="price">{{ wine_bottle['Цена'] }} руб.</span>
@@ -154,7 +154,7 @@
           <div class="col-md-8">
             <h2 style="font-size: 3rem;">проверено временем</h2>
             <span class="sub-title" style="font-size: 2.5rem;">Уже
-              {{years_running}}
+              {{ years_functioning }}
               лет с
               вами</span>
           </div>
