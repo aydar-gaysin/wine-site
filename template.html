@@ -132,7 +132,7 @@ python -m venv venv<!DOCTYPE html>
                   <h3 class="heading mt-3 mb-3 text-dark">{{ wine_bottle
                     ['Название'] }}</h3>
                   <p>
-                    {% if not product_category == 'Напитки' %}
+                    {% if wine_bottle['Сорт'] %}
                     Сорт винограда - {{ wine_bottle['Сорт'] }}<br/>
                     {% endif %}
                     <span class="price">{{ wine_bottle['Цена'] }} руб.</span>
