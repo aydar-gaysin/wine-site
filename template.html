@@ -115,7 +115,7 @@ python -m venv venv<!DOCTYPE html>
         </div>
         <div class="row">
 
-          {% for product_category, wine_bottles in sorted_wines.items() %}
+          {% for product_category, wine_bottles in wines_grouped.items() %}
           <div class="col-12 section-title text-center mb-5">
             <h2 class="d-block">{{ product_category }}</h2>
           </div>
@@ -154,7 +154,7 @@ python -m venv venv<!DOCTYPE html>
           <div class="col-md-8">
             <h2 style="font-size: 3rem;">проверено временем</h2>
             <span class="sub-title" style="font-size: 2.5rem;">Уже
-              {{ years_functioning }}
+              {{ age_of_the_winery }}
               лет с
               вами</span>
           </div>

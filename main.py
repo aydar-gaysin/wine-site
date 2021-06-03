@@ -5,6 +5,7 @@ import os
 import pandas
 
 from dotenv import load_dotenv
+from pprint import pprint
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -19,18 +20,19 @@ env = Environment(
 
 template = env.get_template('template.html')
 
-years_functioning = datetime.datetime.now().year - YEAR_OF_FOUNDATION
-products_import = pandas.read_excel(IMPORT_CATALOGUE, na_values=['Nan', 'nan'],
+age_of_the_winery = datetime.datetime.now().year - YEAR_OF_FOUNDATION
+products_from_file = pandas.read_excel(IMPORT_CATALOGUE, na_values=['Nan',
+                                                                  'nan'],
                                     keep_default_na=False)
 
-sorted_wines = collections.defaultdict(list)
-for product in products_import.to_dict(orient='records'):
+wines_grouped_by_category = collections.defaultdict(list)
+for product in products_from_file.to_dict(orient='records'):
     category = product['Категория']
-    sorted_wines[category].append(product)
+    wines_grouped_by_category[category].append(product)
 
 render_page = template.render(
-    years_functioning=years_functioning,
-    sorted_wines=sorted_wines,
+    age_of_the_winery=age_of_the_winery,
+    wines_grouped=wines_grouped_by_category,
 )
 
 with open('index.html', 'w', encoding='utf8') as file:
