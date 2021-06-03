@@ -19,7 +19,7 @@ env = Environment(
 
 template = env.get_template('template.html')
 
-years_functioning = int(datetime.datetime.now().year) - YEAR_OF_FOUNDATION
+years_functioning = datetime.datetime.now().year - YEAR_OF_FOUNDATION
 products_import = pandas.read_excel(IMPORT_CATALOGUE, na_values=['Nan', 'nan'],
                                     keep_default_na=False)
 
